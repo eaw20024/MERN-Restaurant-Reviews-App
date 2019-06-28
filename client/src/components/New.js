@@ -24,7 +24,7 @@ class New extends Component {
   makeRestaurant = (e) => {
       e.preventDefault();
       axios
-        .post("http://localhost:8000/api/restaurants", this.state.newRestaurant)
+        .post(`/api/restaurants`, this.state.newRestaurant)
         .then(res => {
             if(res.data.errors){
                 this.setState({errors: res.data.errors.errors})

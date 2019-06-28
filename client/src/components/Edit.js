@@ -17,7 +17,7 @@ export class Edit extends Component {
 
     componentDidMount = () => {
         // console.log(this.props.match.params._id);
-        axios.get(`http://localhost:8000/api/restaurants/${this.props.match.params._id}`)
+        axios.get(`/api/restaurants/${this.props.match.params._id}`)
           .then( res => {
             this.setState({restaurant: res.data.restaurant});
           })
@@ -34,7 +34,7 @@ export class Edit extends Component {
 
     updateRestaurant = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:8000/api/restaurants/${this.state.restaurant._id}`, this.state.restaurant)
+        axios.put(`/api/restaurants/${this.state.restaurant._id}`, this.state.restaurant)
           .then( res => {
             if(res.data.errors){
               this.setState({errors: res.data.errors.errors})

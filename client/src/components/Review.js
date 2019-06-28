@@ -16,7 +16,7 @@ export class Review extends Component {
     componentDidMount = () => {
         // console.log(this.props.match.params._id)
         axios
-          .get(`http://localhost:8000/api/restaurants/${this.props.match.params._id}`)
+          .get(`/api/restaurants/${this.props.match.params._id}`)
           .then(res => {
               this.setState({restaurant: res.data.restaurant})
           })

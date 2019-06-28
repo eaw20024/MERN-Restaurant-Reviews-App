@@ -14,7 +14,7 @@ export class List extends Component {
 
     componentDidMount = () => {
         axios
-          .get("http://localhost:8000/api/restaurants")
+          .get(`/api/restaurants`)
           .then(res => {
             // console.log(res)
             this.setState({restaurants: res.data.restaurants});
@@ -25,7 +25,7 @@ export class List extends Component {
     delete = (_id) => {
       // console.log(_id)
       axios
-        .delete(`http://localhost:8000/api/restaurants/${_id}`)
+        .delete(`/api/restaurants/${_id}`)
         .then(res => {
           console.log(res)
           this.componentDidMount();

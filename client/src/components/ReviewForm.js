@@ -25,7 +25,7 @@ export class ReviewForm extends Component {
     review = (e) => {
         e.preventDefault();
         axios
-          .post(`http://localhost:8000/api/reviews/${this.props.match.params._id}`, this.state.review)
+          .post(`/api/reviews/${this.props.match.params._id}`, this.state.review)
           .then(res => {
             if(res.data.errors){
                 this.setState({errors: res.data.errors.errors})
@@ -39,7 +39,7 @@ export class ReviewForm extends Component {
     componentDidMount = () => {
         // console.log(this.props.match.params._id)
         axios
-          .get(`http://localhost:8000/api/restaurants/${this.props.match.params._id}`)
+          .get(`/api/restaurants/${this.props.match.params._id}`)
           .then(res => {
               this.setState({restaurant: res.data.restaurant})
           })
